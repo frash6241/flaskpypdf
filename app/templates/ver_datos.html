@@ -1,0 +1,119 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Color de fondo */
+        }
+        .card {
+            border: 1px solid #6c757d; /* Color de borde */
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1); /* Sombra */
+        }
+        .card-header {
+            background-color: #007bff; /* Color de fondo del encabezado */
+            color: white; /* Color de texto del encabezado */
+        }
+        .card-body {
+            background-color: white; /* Color de fondo del cuerpo */
+        }
+        .card-body ul li {
+            padding: 8px 16px;
+            border-bottom: 1px solid #ddd; /* Línea divisoria */
+        }
+    </style>
+
+        <div class="text-center">
+            <h1>Detalles del Paciente</h1>
+            <a class="btn btn-primary mb-3" href="/">Volver</a>
+            <p><b>Nombre del archivo:</b> {{ contact.45 }}</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Datos del paciente -->
+                <div class="card">
+                    <div class="card-header">
+                        Datos del Paciente
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Nombre:</b> {{ contact.1 }}</li>
+                            <li class="list-group-item"><b>Fecha de Nacimiento:</b> {{ contact.2 }}</li>
+                            <li class="list-group-item"><b>Sexo:</b> {{ contact.3 }}</li>
+                            <li class="list-group-item"><b>Edad:</b> {{ contact.4 }}</li>
+                            <li class="list-group-item"><b>Peso:</b> {{ contact.5 }}</li>
+                            <li class="list-group-item"><b>Altura:</b> {{ contact.6 }}</li>
+                            <li class="list-group-item"><b>Teléfono:</b> {{ contact.7 }}</li>
+                            <li class="list-group-item"><b>Celular:</b> {{ contact.8 }}</li>
+                            <li class="list-group-item"><b>Obra Social:</b> {{ contact.9 }}</li>
+                            <li class="list-group-item"><b>Número de Afiliado:</b> {{ contact.10 }}</li>
+                            <li class="list-group-item"><b>Tipo de Paciente:</b> {{ contact.11 }}</li>
+                            <li class="list-group-item"><b>Capacidad de Realizar Ejercicio:</b> {{ contact.12 }}</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Datos del estudio -->
+                <div class="card">
+                    <div class="card-header">
+                        Datos del Estudio
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Fecha:</b> {{ contact.13 }}</li>
+                            <li class="list-group-item"><b>Médico Operador:</b> {{ contact.14 }}</li>
+                            <li class="list-group-item"><b>Médico Derivador:</b> {{ contact.15 }}</li>
+                            <li class="list-group-item"><b>Protocolo:</b> {{ contact.16 }}</li>
+                            <li class="list-group-item"><b>Observaciones:</b> {{ contact.17 }}</li>
+                            <li class="list-group-item"><b>Motivo del Estudio:</b> {{ contact.18 }}</li>
+                            <li class="list-group-item"><b>Antecedentes:</b> {{ contact.19 }}</li>
+                            <li class="list-group-item"><b>Factores de Riesgo:</b> {{ contact.20 }}</li>
+                            <li class="list-group-item"><b>ECG Reposo:</b> {{ contact.21 }}</li>
+                            <li class="list-group-item"><b>ECO Reposo:</b> {{ contact.22 }}</li>
+                            <li class="list-group-item"><b>Septum:</b> {{ contact.23 }}</li>
+                            <li class="list-group-item"><b>Pared posterior:</b> {{ contact.24 }}</li>
+                            <li class="list-group-item"><b>DFD:</b> {{ contact.25 }}</li>
+                            <li class="list-group-item"><b>DFS:</b> {{ contact.26 }}</li>
+                            <li class="list-group-item"><b>IMVI:</b> {{ contact.27 }}</li>
+                            <li class="list-group-item"><b>Medicación Habitual:</b> {{ contact.28 }}</li>
+                            <li class="list-group-item"><b>Terapia antisquémica:</b> {{ contact.29 }}</li>
+                            <li class="list-group-item"><b>Minutos ejercitados:</b> {{ contact.30 }}</li>
+                            <li class="list-group-item"><b>Carga máxima:</b> {{ contact.31 }}</li>
+                            <li class="list-group-item"><b>Prueba bajo medicación:</b> {{ contact.32 }}</li>
+                            <li class="list-group-item"><b>FCMP:</b> {{ contact.33 }}</li>
+                            <li class="list-group-item"><b>% de FCMP alcanzada:</b> {{ contact.34 }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <!-- Reserva Coronaria -->
+                <div class="card">
+                    <div class="card-header">
+                        Reserva Coronaria
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>VGCB:</b> {{ contact.35 }}</li>
+                            <li class="list-group-item"><b>VFCMax:</b> {{ contact.36 }}</li>
+                            <li class="list-group-item"><b>RCD:</b> {{ contact.37 }}</li>
+                            <li class="list-group-item"><b>Alteraciones en el ECG:</b> {{ contact.38 }}</li>
+                            <li class="list-group-item"><b>Remisión de Isquemia:</b> {{ contact.39 }}</li>
+                            <li class="list-group-item"><b>Test detenido por efectos adversos:</b> {{ contact.40 }}</li>
+                            <li class="list-group-item"><b>Motivo:</b> {{ contact.41 }}</li>
+                            <li class="list-group-item"><b>Tiempo de Inicio:</b> {{ contact.42 }}</li>
+                            <li class="list-group-item"><b>Diagnóstico:</b> {{ contact.43 }}</li>
+                            <li class="list-group-item"><b>Conclusiones:</b> {{ contact.44 }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    
+
+{% endblock %}

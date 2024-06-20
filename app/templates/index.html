@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<a class="btn btn-primary mb-3" href="/extraer_datos">SUBIR ARCHIVO PDF</a>
+<div class="row">
+  <!--<div class="col-md-4">-->
+    
+    <!---
+    <form action="/add_contact" method="POST">
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="fullname" placeholder="Fullname">
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="phone" placeholder="Phone">
+      </div>
+      <div class="mb-3">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email" placeholder="Email">
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary">
+        SAVE
+        </button>
+      </div>
+    </form>
+  </div>-->
+  <div class="col-md-12">
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <table class="table">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>File</td>
+          <td>Nombres/Apellido</td>
+          <td>Fecha/nacimiento</td>
+          <td>Sexo</td>
+          <td>Edad</td>
+          <td>Peso</td>
+          <td>Altura</td>
+          <td class="text-end">ACCION</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for pdfd in pdf %}
+        <tr>
+          <td>{{ pdfd.0 }}</td>
+          <td>{{ pdfd.45 | truncate(length=30, end='...') }}</td>
+          <td>{{ pdfd.1 }}</td>
+          <td>{{ pdfd.2 }}</td>
+          <td>{{ pdfd.3 }}</td>
+          <td>{{ pdfd.4 }}</td>
+          <td>{{ pdfd.5 }}</td>
+          <td>{{ pdfd.6 }}</td>
+          <td class="text-end"><a class="btn btn-danger btn-sm" href="#" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" onclick="confirmDelete('{{ pdfd.0 }}')">Delete</a> <a class="btn btn-warning btn-sm" href="/edit/{{ pdfd.0 }}">Edit</a> <a class="btn btn-primary btn-sm" href="/ver/{{ pdfd.0 }}">VER</a></td>
+        </tr>      
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<!-- Modal para confirmar eliminación -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro que desea eliminar este elemento?
+            </div>
+            <div class="modal-footer">
+                <a id="confirmDeleteButton" class="btn btn-danger">Sí</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function confirmDelete(itemId) {
+        document.getElementById('confirmDeleteButton').href = '/delete/' + itemId;
+        // Mostrar el modal
+        $('#confirmDeleteModal').modal('show');
+    }
+</script>
+
+
+{% endblock %}

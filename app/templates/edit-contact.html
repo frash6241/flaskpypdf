@@ -1,0 +1,307 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<center><h1>ACTUALIZAR</h1></center>
+
+<a class="btn btn-primary mb-3" href="/">Volver</a>
+<p><b>FILE NAME:</b>{{ contact.45 }}</p>
+<form action="/update/{{ contact.0 }}" method="POST">
+    
+    <h5><b>Datos del paciente:</b></h5>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ contact.1 }}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="fecha_na">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fecha_na" name="fecha_na" value="{{ contact.2 }}">
+            </div>    
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select class="form-control" id="sexo" name="sexo">
+                            <option value="masculino" {% if contact.3 == 'masculino' %} selected {% endif %}>Masculino</option>
+                            <option value="femenino" {% if contact.3 == 'femenino' %} selected {% endif %}>Femenino</option>
+                        </select>
+            </div>
+        </div>
+        <div class="col-md-3">
+           <div class="form-group">
+                        <label for="edad">Edad</label>
+                        <input type="text" class="form-control" id="edad" name="edad" value="{{ contact.4 }}">
+            </div> 
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                        <label for="peso">Peso</label>
+                        <input type="text" class="form-control" id="peso" name="peso" value="{{ contact.5 }}">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                        <label for="altura">Altura</label>
+                        <input type="text" class="form-control" id="altura" name="altura" value="{{ contact.6 }}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="tel">Teléfono</label>
+                        <input type="tel" class="form-control" id="tel" name="tel" value="{{ contact.7 }}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="cel">Celular</label>
+                        <input type="tel" class="form-control" id="cel" name="cel" value="{{ contact.8 }}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="obra_s">Obra social</label>
+                        <input type="text" class="form-control" id="obra_s" name="obra_s" value="{{ contact.9 }}">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="numero_a">Número de Afiliado</label>
+                        <input type="text" class="form-control" id="numero_a" name="numero_a" value="{{ contact.10 }}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="tipo_p">Tipo de Paciente:</label>
+                        <input type="tel" class="form-control" id="tipo_p" name="tipo_p" value="{{ contact.11 }}">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                        <label for="capacidad_e">Capacidad de Realizar Ejercicio</label>
+                        <input type="tel" class="form-control" id="capacidad_e" name="capacidad_e" value="{{ contact.12 }}">
+            </div>
+        </div>
+    </div>                
+    <h5><b>Datos del estudio:</b></h5>
+    <div class="row">
+        <div class="col-md-4">
+           <div class="form-group">
+                <label for="fecha_e">Fecha</label>
+                <input type="date" class="form-control" id="fecha_e" name="fecha_e" placeholder="DD/MM/YYYY"  value="{{ contact.13 }}">
+            </div> 
+        </div>
+    </div>       
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="medico_o">Médico Operador</label>
+                <input type="text" class="form-control" id="medico_o" name="medico_o" value="{{ contact.14 }}">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="medico_d">Médico Derivador</label>
+                <input type="text" class="form-control" id="medico_d" name="medico_d" value="{{ contact.15 }}">
+            </div>
+        </div>
+    </div>        
+            <div class="form-group">
+                <label for="protocolo">Protocolo</label>
+                <input type="text" class="form-control" id="protocolo" name="protocolo"   value="{{ contact.16 }}">
+            </div>
+            <div class="form-group">
+                <label for="observaciones">Observaciones</label>
+                <textarea class="form-control" id="observaciones" name="observaciones" rows="3" >{{ contact.17 }}</textarea>
+            </div>
+    
+        <h5><b>Interrogatorio previo:</b></h5>
+            <div class="form-group">
+                <label for="motivo_e">Motivo del Estudio</label>
+                <input type="text" class="form-control" id="motivo_e" name="motivo_e" placeholder="Motivo del Estudio"   value="{{ contact.18 }}">
+            </div>
+            <div class="form-group">
+                <label for="antecedentes">Antecedentes</label>
+                <input type="text" class="form-control" id="antecedentes" name="antecedentes" rows="3"    value="{{ contact.19 }}">
+            </div>
+            <div class="form-group">
+                <label for="factores_r">Factores de Riesgo</label>
+                <input type="text" class="form-control" id="factores_r" name="factores_r"    value="{{ contact.20 }}">
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="ecg">ECG Reposo</label>
+                        <input type="text" class="form-control" id="ecg" name="ecg"   value="{{ contact.21 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="eco">ECO Reposo</label>
+                        <input type="text" class="form-control" id="eco" name="eco"   value="{{ contact.22 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="septum">Septum</label>
+                        <input type="text" class="form-control" id="septum" name="septum"    value="{{ contact.23 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="pared_p">Pared posterior</label>
+                        <input type="text" class="form-control" id="pared_p" name="pared_p"    value="{{ contact.24 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="dfd">DFD</label>
+                        <input type="text" class="form-control" id="dfd" name="dfd"  value="{{ contact.25 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="dfd">DFS</label>
+                        <input type="text" class="form-control" id="dfs" name="dfs"  value="{{ contact.26 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="imvi">IMVI</label>
+                        <input type="text" step="0.01" class="form-control" id="imvi" name="imvi"    value="{{ contact.27 }}">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                   <div class="form-group">
+                        <label for="habitual">Medicación Habitual</label>
+                        <input type="text" class="form-control" id="habitual" name="habitual" rows="3"   value="{{ contact.28 }}">
+                    </div> 
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="terapia">Terapia antisquémica</label>
+                        <input type="text" class="form-control" id="terapia" name="terapia"    value="{{ contact.29 }}">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="minutos">Minutos ejercitados</label>
+                        <input type="text" class="form-control" id="minutos" name="minutos"    value="{{ contact.30 }}">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="carga">Carga máxima</label>
+                        <input type="text" step="0.000001" class="form-control" id="carga" name="carga"    value="{{ contact.31 }}">
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="prueba_b">Prueba bajo medicación</label>
+                        <select class="form-control" id="prueba_b" name="prueba_b"   value="{{ contact.32 }}">
+                            <option value="No">No</option>
+                            <option value="Si">Sí</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fcmp">FCMP</label>
+                        <input type="text" class="form-control" id="fcmp" name="fcmp" placeholder="FCMP"   value="{{ contact.33 }}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fcmp_porcentaje">% de FCMP alcanzada</label>
+                        <input type="text" class="form-control" id="fcmp_porcentaje" name="fcmp_porcentaje" placeholder="Porcentaje de FCMP alcanzada"   value="{{ contact.34 }}">
+                    </div>
+    
+                </div>
+            </div>
+            
+    <h5><b>Reserva Coronaria:</b></h5>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="vgcb">VGCB</label>
+                <input type="text" class="form-control" id="vfcb" value="{{ contact.35 }}" name="vfcb">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="vfcmax">VFCMax</label>
+                <input type="text" class="form-control" id="vfcmax" value="{{ contact.36 }}" name="vfcmax">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="rcd">RCD</label>
+                <input type="text" class="form-control" id="rcd" value="{{ contact.37 }}" name="rcd">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="alt_ecg">Alteraciones en el ECG</label>
+                <input type="text" class="form-control" id="alt_ecg" value="{{ contact.38 }}" name="alt_ecg">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="isquemia">Remisión de Isquemia</label>
+                <input type="text" class="form-control" id="isquemia" value="{{ contact.39 }}" name="isquemia">
+            </div>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <div class="row"></div>
+                <label for="test_ad"><h5><b>Test detenido por efectos adversos:</b></h5></label>
+                <input type="text" class="form-control" id="test_ad" value="{{ contact.40 }}" name="test_ad">
+            </div>
+        </div>
+    </div>
+            
+            <div class="form-group">
+                <label for="motivo">Motivo</label>
+                <input type="text" class="form-control" id="motivo" value="{{ contact.41 }}" name="motivo">
+            </div>
+            <div class="form-group">
+                <label for="tiempo_i">Tiempo de Inicio</label>
+                <input type="text" class="form-control" id="tiempo_i" value="{{ contact.42 }}" name="tiempo_i">
+            </div>
+            <div class="form-group">
+                <label for="diagnostico"><h5><b>Diagnóstico:</b></h5></label>
+                <textarea class="form-control" id="diagnostico" name="diagnostico" rows="8">{{ contact.43 }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="conclusiones"><h5><b>Conclusiones:</b></h5></label>
+                <textarea class="form-control" id="conclusiones" name="conclusiones" rows="3">{{ contact.44 }}</textarea>
+            </div>
+            
+    <div class="mb-3"></div>      
+  <button class="btn btn-primary mb-3" type="submit">
+    GUARDAR CAMBIOS
+  </button>
+</form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<form action="/update/{{ datos.0 }}" method="POST">
+    <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="{{ datos.1 }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_na">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fecha_na" name="fecha_na" value="{{ datos.2 }}">
+                    </div>           
+    </div>                
+</form>
+{% endblock %}
